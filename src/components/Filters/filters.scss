@@ -1,0 +1,25 @@
+.filters-container {
+  width: 80%;
+  min-height: 50px;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 auto;
+  .filters-option {
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    button {
+      width: 140px;
+      padding: 10px 20px;
+      background-color: rgba(0, 0, 0, 0.6);
+      border: 5px solid $primary-purple;
+      text-transform: uppercase;
+      font-weight: bold;
+      color: $just-white;
+      &:hover {
+        background-color: $primary-purple;
+      }
+    }
+  }
+}

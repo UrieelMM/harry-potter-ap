@@ -7,10 +7,10 @@
   margin: 0 auto;
   .menu-option {
     &--left {
-      border-top-left-radius: 5px;
+      border-radius: 5px 0 0 0;
     }
     &--right {
-      border-top-right-radius: 5px;
+      border-radius: 0 5px 0 0;
     }
     width: 140px;
     height: 36px;
@@ -27,11 +27,30 @@
       font-size: 1.4rem;
       font-weight: bold;
       line-height: 2.5rem;
+      text-transform: uppercase;
     }
     &--icon {
       height: 18px;
       width: 18px;
       margin-left: 5px;
+    }
+  }
+}
+@media (min-width: 768px) {
+  .menu-container {
+    .menu-option {
+      &--left {
+        position: absolute;
+        top: 0;
+        right: 40px;
+        border-radius: 0 0 5px 0;
+      }
+      &--right {
+        position: absolute;
+        right: 180px;
+        top: 0;
+        border-radius: 0 0 0 5px;
+      }
     }
   }
 }

@@ -15,6 +15,16 @@ body {
   background-color: #000000;
   margin: 0;
 }
+@media (min-width: 768px) {
+  body {
+    position: absolute;
+    top: 0;
+    background-image: url("https://res.cloudinary.com/dz5tntwl1/image/upload/v1661318587/proyectos-work/Background_ust9tc.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100vw 1280px;
+  }
+}
 h1,
 h2,
 h3,
