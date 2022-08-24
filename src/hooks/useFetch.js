@@ -9,11 +9,11 @@ const useFetch = (URL) => {
     const getData = async () => {
       try {
         setLoading(true);
-        setTimeout(async () => {
-          const res = await fetch(URL);
-          const data = await res.json();
-          setResult(data);
-        }, 2500);
+
+        const res = await fetch(URL);
+        const data = await res.json();
+        setResult(data);
+
         setLoading(false);
       } catch (error) {
         setLoading(false);
