@@ -1,4 +1,5 @@
 import React from "react";
+import Header from "../Header";
 import Menu from "../Menu";
 
 const Layout = ({ children }) => {
@@ -7,6 +8,7 @@ const Layout = ({ children }) => {
       className="layout-bg
   "
     >
+      <Header />
       {children}
       <Menu />
     </div>
