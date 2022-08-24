@@ -1,0 +1,10 @@
+.header-container {
+  width: 100vw;
+  height: 380px;
+  max-height: 400px;
+  .header-logo span {
+    height: 150px;
+    width: 100%;
+    background-image: url("../../assets/logo.png");
+  }
+}

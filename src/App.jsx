@@ -1,8 +1,8 @@
 import { useState } from "react";
-import "./App.scss";
+import Layout from "./components/Layout/Layout";
 
 function App() {
-  return <div className="App"></div>;
+  return <Layout></Layout>;
 }
 
 export default App;
