@@ -1,4 +1,6 @@
 .menu-container {
+  position: sticky;
+  bottom: 0;
   max-width: 90%;
   height: 100vh;
   display: flex;
@@ -36,7 +38,7 @@
     }
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 520px) {
   .menu-container {
     .menu-option {
       &--left {

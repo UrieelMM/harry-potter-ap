@@ -9,18 +9,19 @@ const useFetch = (URL) => {
     const getData = async () => {
       try {
         setLoading(true);
-        const res = await fetch(URL);
-        const data = await res.json();
-        setResult(data);
+        setTimeout(async () => {
+          const res = await fetch(URL);
+          const data = await res.json();
+          setResult(data);
+        }, 2500);
         setLoading(false);
       } catch (error) {
         setLoading(false);
         setError(error.message);
-        console.log(error);
       }
     };
     getData();
-  }, []);
+  }, [URL]);
 
   return {
     result,
