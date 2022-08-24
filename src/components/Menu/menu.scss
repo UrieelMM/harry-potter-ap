@@ -5,18 +5,21 @@
   justify-content: center;
   align-items: flex-end;
   margin: 0 auto;
-  .menu-option--left {
-    border-top-left-radius: 5px;
-  }
-  .menu-option--right {
-    border-top-right-radius: 5px;
-  }
   .menu-option {
+    &--left {
+      border-top-left-radius: 5px;
+    }
+    &--right {
+      border-top-right-radius: 5px;
+    }
     width: 140px;
     height: 36px;
     display: flex;
     justify-content: center;
     align-items: center;
+    border: none;
+    outline: none;
+    cursor: pointer;
     background-color: $primary-purple;
     text-align: center;
     p {
@@ -24,6 +27,11 @@
       font-size: 1.4rem;
       font-weight: bold;
       line-height: 2.5rem;
+    }
+    &--icon {
+      height: 18px;
+      width: 18px;
+      margin-left: 5px;
     }
   }
 }
