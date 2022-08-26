@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import icon_favorite from "../../assets/icon-favorite.svg";
+import icon_favorite from "../../assets/icon_favorite.svg";
 
 const Card = ({
   character: {

@@ -1,3 +1,22 @@
 {
-  "favorites": []
+  "characters": [
+    {
+      "id": "2",
+      "name": "Mark"
+    }
+  ],
+  "favorites": [
+    {
+      "id": "1",
+      "name": "Uriel"
+    },
+    {
+      "id": "2",
+      "name": "Mark"
+    },
+    {
+      "id": "3",
+      "name": "Arnold"
+    }
+  ]
 }

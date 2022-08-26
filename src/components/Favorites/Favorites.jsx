@@ -1,14 +1,19 @@
 import React from "react";
+import icon_trash from "../../assets/icon_trash.svg";
 
-const Favorites = ({ isShowingFavorites, hide }) =>
+const Favorites = ({ isShowingFavorites, favorites }) =>
   isShowingFavorites ? (
     <>
       <div className="favorites-container">
-        <div className="favorites-item">
-          <img src="" alt="" />
-          <p>Luna Lovegood</p>
-          <span>Icon</span>
-        </div>
+        {favorites.map((favorite, index) => {
+          return (
+            <div className="favorites-item">
+              <img src="" alt="" />
+              <p>{favorite.name}</p>
+              <span>Icon</span>
+            </div>
+          );
+        })}
       </div>
     </>
   ) : null;

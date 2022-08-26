@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { initialValues } from "../../../validation/initialValues";
-import { validationSchema } from "../../../validation/validationSchema";
+import { initialValues } from "../../validation/initialValues";
+import { validationSchema } from "../../validation/validationSchema";
 import registerCharacter from "../../../api/registerCharacter";
 
 const Form = () => {

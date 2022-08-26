@@ -1,14 +1,23 @@
-import React from "react";
-import useModal from "../../hooks/useModal";
+import React, { useEffect } from "react";
 import Modal from "../Modal";
+import Favorites from "../Favorites";
+import useModal from "../../hooks/useModal";
+import useFavorites from "../../hooks/useFavorites";
 import save_fill from "../../assets/save_fill.svg";
 import user_fill from "../../assets/user_fill.svg";
-import Favorites from "../Favorites";
-import useFavorites from "../../hooks/useFavorites";
+import { useDispatch, useSelector } from "react-redux";
+import { getFavorites } from "../../redux/favorites";
 
 const Menu = () => {
   const { isShowing, toggle } = useModal();
   const { isShowingFavorites, toggleFavorites } = useFavorites();
+  //redux
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getFavorites());
+  }, []);
+  const favorites = useSelector((state) => state.favorites);
+
   return (
     <div className="menu-container">
       <button
@@ -25,6 +34,7 @@ const Menu = () => {
       <Favorites
         isShowingFavorites={isShowingFavorites}
         hide={toggleFavorites}
+        favorites={favorites}
       />
       <button onClick={toggle} className="menu-option menu-option--right">
         <p>Agregar</p>

@@ -1,5 +1,5 @@
 export default async function registerCharacter(character) {
-  const URL = "http://localhost:4000/favorites";
+  const URL = "http://localhost:4000/characters";
   const options = {
     method: "POST",
     headers: {
