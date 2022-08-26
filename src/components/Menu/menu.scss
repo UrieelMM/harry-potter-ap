@@ -1,13 +1,15 @@
 .menu-container {
+  max-width: 90%;
   position: sticky;
   bottom: 0;
-  max-width: 90%;
+  z-index: 9999;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: flex-end;
   margin: 0 auto;
   .menu-option {
+    box-shadow: -5px -5px 10px rgba(0, 0, 0, 0.4);
     &--left {
       border-radius: 5px 0 0 0;
     }
