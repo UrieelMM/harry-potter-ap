@@ -5,7 +5,7 @@ import { Provider } from "react-redux";
 import generateStore from "./redux/store";
 
 function App() {
-  const { result } = useFetch("http://hp-api.herokuapp.com/api/characters");
+  const { result } = useFetch("https://hp-api.herokuapp.com/api/characters");
   const store = generateStore();
   return (
     <Provider store={store}>
