@@ -1,6 +1,6 @@
-#Harry Potter App
+# Harry Potter App
 
-## steps
+### steps
 
 ### Ejecutar npm install
 
