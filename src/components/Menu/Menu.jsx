@@ -15,7 +15,7 @@ const Menu = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getFavorites());
-  }, []);
+  }, [isShowingFavorites]);
   const favorites = useSelector((state) => state.favorites);
 
   return (
