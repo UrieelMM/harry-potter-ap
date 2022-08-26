@@ -1,18 +1,18 @@
-#Harry Potter App
+# Harry Potter App
 
-## steps
+### steps
 
-## Ejecutar npm install
+### Ejecutar npm install
 
-## Instalar npm install -g json-server
+### Instalar npm install -g json-server
 
-## Ejecutar dentro de la raíz del proyecto el comando json-server --watch db.json --port 400
+### Ejecutar dentro de la raíz del proyecto el comando json-server --watch db.json --port 400
 
-## Abrir en el navegador http://localhost:4000/favorites para Favoritos y http://localhost:4000/characters para los personajes
+### Abrir en el navegador http://localhost:4000/favorites para Favoritos y http://localhost:4000/characters para los personajes
 
-## Ejecutar dentro de la raíz del proyecto el comando npm run
+### Ejecutar dentro de la raíz del proyecto el comando npm run
 
-## Abrir en el navegador http://127.0.0.1:5173/ para la visualización de la App
+### Abrir en el navegador http://127.0.0.1:5173/ para la visualización de la App
 
 ### ¿Qué es lo que más te gustó de tu desarrollo?
 
