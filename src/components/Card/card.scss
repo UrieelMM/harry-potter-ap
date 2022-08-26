@@ -21,28 +21,12 @@
       object-fit: cover;
     }
   }
-  .Slytherin {
-    background: linear-gradient(135deg, #1c792b 0%, #82e95e 100%);
-  }
-  .Ravenclaw {
-    background: linear-gradient(135deg, #0597b7 0%, #66d1ff 100%);
-  }
-  .Hufflepuff {
-    background: linear-gradient(135deg, #ffc700 0%, #fff388 100%);
-  }
-  .Gryffindor {
-    background: linear-gradient(135deg, #ff0000 0%, #fed482 100%);
-  }
-  .bgDefault {
-    background: linear-gradient(135deg, #c0c0c0 0%, #2e2e2e 100%);
-  }
   .card-content {
     width: 100%;
     height: 100px;
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     padding: 5px 10px;
-    background-color: $just-white;
     border-radius: 0 0 20px 20px;
     &--name {
       min-height: 25px;
@@ -59,15 +43,23 @@
     }
     &--conditions {
       width: 100%;
-      margin-top: 20px;
+      margin-bottom: 10px;
       display: flex;
-      flex-direction: column;
+      justify-content: space-between;
       align-items: flex-start;
       p {
         font-size: 1.2rem;
         font-weight: bold;
         margin-bottom: 5px;
         color: $text-grey;
+      }
+      &--icon {
+        border: none;
+        background-color: transparent;
+        img {
+          width: 20px;
+          height: 20px;
+        }
       }
     }
   }
@@ -89,6 +81,7 @@
       width: 60%;
       height: 200px;
       border-radius: 0 20px 20px 0;
+      flex-direction: column;
       justify-content: center;
       &--name {
         font-size: 2.6rem;
@@ -100,6 +93,7 @@
         display: block;
         font-size: 1.2rem;
         font-weight: bold;
+        line-height: 1.9rem;
         span {
           font-weight: 400;
         }

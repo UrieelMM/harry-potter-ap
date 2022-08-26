@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import icon_favorite from "../../assets/icon-favorite.svg";
 
 const Card = ({
   character: {
@@ -25,23 +26,30 @@ const Card = ({
           alt={name}
         />
       </div>
-      <div className="card-content">
-        <p className="card-content--name">{name}</p>
-        <p className="card-content--birth">
-          Cumpleaños: <span>{dateOfBirth}</span>
-        </p>
-        <p className="card-content--gender">
-          Género: <span>{gender}</span>
-        </p>
-        <p className="card-content--eye">
-          Color de ojos: <span>{eyeColour}</span>
-        </p>
-        <p className="card-content--hair">
-          Color de ojos: <span>{hairColour}</span>
-        </p>
+      <div className={alive ? "card-content bgWhite" : "card-content bgGrey"}>
         <div className="card-content--conditions">
-          {alive ? <p>Vivo</p> : <p>Muerto</p>}
-          {hogwartsStaff ? <p>Staff</p> : <p>Estudiante</p>}
+          <div>
+            {alive ? <p>Vivo</p> : <p>Muerto</p>}
+            {hogwartsStaff ? <p>Staff</p> : <p>Estudiante</p>}
+          </div>
+          <button className="card-content--conditions--icon">
+            <img src={icon_favorite} alt="Favorite" />
+          </button>
+        </div>
+        <div>
+          <p className="card-content--name">{name}</p>
+          <p className="card-content--birth">
+            Cumpleaños: <span>{dateOfBirth}</span>
+          </p>
+          <p className="card-content--gender">
+            Género: <span>{gender}</span>
+          </p>
+          <p className="card-content--eye">
+            Color de ojos: <span>{eyeColour}</span>
+          </p>
+          <p className="card-content--hair">
+            Color de ojos: <span>{hairColour}</span>
+          </p>
         </div>
       </div>
     </div>
