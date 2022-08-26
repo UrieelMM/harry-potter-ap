@@ -12,7 +12,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: red;
     border-radius: 20px 20px 0 0;
     padding: 5px 10px;
     img {
@@ -21,6 +20,21 @@
       border-radius: 150px;
       object-fit: cover;
     }
+  }
+  .Slytherin {
+    background: linear-gradient(135deg, #1c792b 0%, #82e95e 100%);
+  }
+  .Ravenclaw {
+    background: linear-gradient(135deg, #0597b7 0%, #66d1ff 100%);
+  }
+  .Hufflepuff {
+    background: linear-gradient(135deg, #ffc700 0%, #fff388 100%);
+  }
+  .Gryffindor {
+    background: linear-gradient(135deg, #ff0000 0%, #fed482 100%);
+  }
+  .bgDefault {
+    background: linear-gradient(135deg, #c0c0c0 0%, #2e2e2e 100%);
   }
   .card-content {
     width: 100%;

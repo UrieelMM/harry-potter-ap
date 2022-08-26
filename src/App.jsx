@@ -1,10 +1,9 @@
 import Card from "./components/Card";
 import Layout from "./components/Layout/Layout";
-import useFetch from "./hooks/useFetch";
+import useFetch from "./hooks/useCharacters";
 
 function App() {
   const { result } = useFetch("http://hp-api.herokuapp.com/api/characters");
-
   return (
     <Layout>
       <div className="cards-container">

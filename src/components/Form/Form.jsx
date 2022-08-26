@@ -1,56 +1,116 @@
 import React from "react";
+import { useFormik } from "formik";
+import * as Yup from "yup";
+import { initialValues } from "../../../validation/initialValues";
+import { validationSchema } from "../../../validation/validationSchema";
+import registerCharacter from "../../../api/registerCharacter";
 
 const Form = () => {
+  const formik = useFormik({
+    initialValues: initialValues(),
+    validationSchema: Yup.object(validationSchema()),
+    validateOnChange: false,
+    onSubmit: async (formData) => {
+      const response = await registerCharacter(formData);
+      console.log(response);
+    },
+  });
   return (
     <div className="form">
       <h3>Agrega un personaje</h3>
-      <form className="form-container">
+      <form className="form-container" onSubmit={formik.handleSubmit}>
         <div className="form-group">
-          <label htmlFor="">Nombre</label>
-          <input type="text" name="name" />
+          <label>Nombre</label>
+          <input type="text" name="name" onChange={formik.handleChange} />
+          {formik.errors.name && (
+            <p className="error-message">El nombre es obligatorio</p>
+          )}
         </div>
         <div className="form-group">
-          <label htmlFor="">Cumpleaños</label>
-          <input type="text" name="birthday" />
+          <label>Cumpleaños</label>
+          <input type="date" name="birthday" onChange={formik.handleChange} />
+          {formik.errors.birthday && (
+            <p className="error-message">El cumpleaños es obligatorio</p>
+          )}
         </div>
         <div className="form-group">
-          <label htmlFor="">Color de ojos</label>
-          <input type="text" name="eyes" />
+          <label>Color de ojos</label>
+          <input type="text" name="eyes" onChange={formik.handleChange} />
+          {formik.errors.eyes && (
+            <p className="error-message">El color de ojos es obligatorio</p>
+          )}
         </div>
         <div className="form-group">
-          <label htmlFor="">Color de pelo</label>
-          <input type="text" name="hair" />
+          <label>Color de pelo</label>
+          <input type="text" name="hair" onChange={formik.handleChange} />
+          {formik.errors.hair && (
+            <p className="error-message">El color de pelo es obligatorio</p>
+          )}
         </div>
         <div className="form-group">
-          <label htmlFor="">Género</label>
+          <label>Género</label>
           <div className="form-group--options">
             <div className="form-group--option">
-              <input type="radio" name="gender" /> <span>Mujer</span>
+              <input
+                type="radio"
+                name="gender"
+                onChange={formik.handleChange}
+              />{" "}
+              <span>Mujer</span>
             </div>
             <div className="form-group--option">
-              <input type="radio" name="gender" /> <span>Hombre</span>
+              <input
+                type="radio"
+                name="gender"
+                onChange={formik.handleChange}
+              />{" "}
+              <span>Hombre</span>
             </div>
           </div>
+          {formik.errors.name && (
+            <p className="error-message">El género es obligatorio</p>
+          )}
         </div>
         <div className="form-group">
-          <label htmlFor="">Posición</label>
+          <label>Posición</label>
           <div className="form-group--options">
             <div className="form-group--option">
-              <input type="radio" name="position" /> <span>Estudiante</span>
+              <input
+                type="radio"
+                name="position"
+                onChange={formik.handleChange}
+              />{" "}
+              <span>Estudiante</span>
             </div>
             <div className="form-group--option">
-              <input type="radio" name="position" /> <span>Staff</span>
+              <input
+                type="radio"
+                name="position"
+                onChange={formik.handleChange}
+              />{" "}
+              <span>Staff</span>
             </div>
           </div>
+          {formik.errors.position && (
+            <p className="error-message">La posición es obligatoria</p>
+          )}
         </div>
         <div className="form-group">
           <label htmlFor="">Fotografía</label>
-          <input type="file" name="photography" />
+          <input
+            type="file"
+            name="photo"
+            accept="image/*"
+            onChange={formik.handleChange}
+          />
+          {formik.errors.photo && (
+            <p className="error-message">La foto es obligatoria</p>
+          )}
+        </div>
+        <div className="form-button">
+          <button type="submit">Guardar</button>
         </div>
       </form>
-      <div className="form-button">
-        <button type="submit">Guardar</button>
-      </div>
     </div>
   );
 };

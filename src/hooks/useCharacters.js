@@ -9,11 +9,16 @@ const useFetch = (URL) => {
     const getData = async () => {
       try {
         setLoading(true);
-
         const res = await fetch(URL);
         const data = await res.json();
-        setResult(data);
-
+        const characters = await data.map((character, index) => {
+          return {
+            ...character,
+            bgColor: character.house ? character.house : "bgDefault",
+            id: index + 1,
+          };
+        });
+        setResult(characters);
         setLoading(false);
       } catch (error) {
         setLoading(false);

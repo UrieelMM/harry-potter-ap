@@ -1,5 +1,4 @@
 import ReactDOM from "react-dom";
-import { Formik, Field } from "formik";
 import Form from "../Form";
 
 const Modal = ({ isShowing, hide }) =>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Card = ({
   character: {
@@ -10,11 +10,12 @@ const Card = ({
     hairColour,
     alive,
     hogwartsStaff,
+    bgColor,
   },
 }) => {
   return (
     <div className="card-container">
-      <div className="card-img">
+      <div className={`card-img ${bgColor}`}>
         <img
           src={
             image
