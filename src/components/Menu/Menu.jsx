@@ -5,7 +5,6 @@ import save_fill from "../../assets/save_fill.svg";
 import user_fill from "../../assets/user_fill.svg";
 
 const Menu = () => {
-  //useModal
   const { isShowing, toggle } = useModal();
 
   return (

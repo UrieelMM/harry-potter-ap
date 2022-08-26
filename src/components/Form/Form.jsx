@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { initialValues } from "../../../validation/initialValues";
@@ -6,18 +6,31 @@ import { validationSchema } from "../../../validation/validationSchema";
 import registerCharacter from "../../../api/registerCharacter";
 
 const Form = () => {
+  const [success, setSuccess] = useState(false);
+
   const formik = useFormik({
     initialValues: initialValues(),
     validationSchema: Yup.object(validationSchema()),
     validateOnChange: false,
-    onSubmit: async (formData) => {
+    onSubmit: async (formData, { resetForm }) => {
       const response = await registerCharacter(formData);
-      console.log(response);
+      if (response === 200 || response === 201) {
+        setSuccess(true);
+        setTimeout(() => {
+          window.location.reload();
+        }, 1000);
+      }
     },
   });
+
   return (
     <div className="form">
       <h3>Agrega un personaje</h3>
+      {success && (
+        <div className="form-success">
+          <p>Se agregó correctamente</p>
+        </div>
+      )}
       <form className="form-container" onSubmit={formik.handleSubmit}>
         <div className="form-group">
           <label>Nombre</label>
@@ -54,6 +67,7 @@ const Form = () => {
               <input
                 type="radio"
                 name="gender"
+                value="Mujer"
                 onChange={formik.handleChange}
               />{" "}
               <span>Mujer</span>
@@ -62,6 +76,7 @@ const Form = () => {
               <input
                 type="radio"
                 name="gender"
+                value="Hombre"
                 onChange={formik.handleChange}
               />{" "}
               <span>Hombre</span>
@@ -78,6 +93,7 @@ const Form = () => {
               <input
                 type="radio"
                 name="position"
+                value="Estudiante"
                 onChange={formik.handleChange}
               />{" "}
               <span>Estudiante</span>
@@ -86,6 +102,7 @@ const Form = () => {
               <input
                 type="radio"
                 name="position"
+                value="Staff"
                 onChange={formik.handleChange}
               />{" "}
               <span>Staff</span>
