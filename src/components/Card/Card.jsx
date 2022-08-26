@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import icon_favorite from "../../assets/icon_favorite.svg";
+import { useDispatch, useSelector } from "react-redux";
+import { addFavorite } from "../../redux/favorites";
 
 const Card = ({
   character: {
@@ -14,6 +16,17 @@ const Card = ({
     bgColor,
   },
 }) => {
+  const dispatch = useDispatch();
+  const favorites = useSelector((state) => state.favorites);
+
+  const handleAddFavorite = () => {
+    if (favorites.length === 5) {
+      alert("No puedes tener mas de 5 favoritos");
+    } else {
+      dispatch(addFavorite({ name, image }));
+    }
+  };
+
   return (
     <div className="card-container">
       <div className={`card-img ${bgColor}`}>
@@ -32,12 +45,18 @@ const Card = ({
             {alive ? <p>Vivo</p> : <p>Muerto</p>}
             {hogwartsStaff ? <p>Staff</p> : <p>Estudiante</p>}
           </div>
-          <button className="card-content--conditions--icon">
+          <button
+            onClick={() => handleAddFavorite()}
+            className="card-content--conditions--icon"
+          >
             <img src={icon_favorite} alt="Favorite" />
           </button>
         </div>
         <div>
-          <p className="card-content--name">{name}</p>
+          <p className="card-content--name">
+            {!alive && <span>+</span>}
+            {name}
+          </p>
           <p className="card-content--birth">
             Cumpleaños: <span>{dateOfBirth}</span>
           </p>

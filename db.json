@@ -7,16 +7,29 @@
   ],
   "favorites": [
     {
-      "id": "1",
-      "name": "Uriel"
+      "name": "Luna Lovegood",
+      "image": "http://hp-api.herokuapp.com/images/luna.jpg",
+      "id": 2
     },
     {
-      "id": "2",
-      "name": "Mark"
+      "name": "Cho Chang",
+      "image": "http://hp-api.herokuapp.com/images/cho.jpg",
+      "id": 4
     },
     {
-      "id": "3",
-      "name": "Arnold"
+      "name": "Fred Weasley",
+      "image": "",
+      "id": 5
+    },
+    {
+      "name": "Lily Potter",
+      "image": "",
+      "id": 6
+    },
+    {
+      "name": "Hermione Granger",
+      "image": "http://hp-api.herokuapp.com/images/hermione.jpeg",
+      "id": 7
     }
   ]
 }
